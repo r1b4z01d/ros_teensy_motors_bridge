@@ -88,6 +88,7 @@ void doPID(SetPointInfo * p) {
   output += p->output;
   // Accumulate Integral error *or* Limit output.
   // Stop accumulating when output saturates
+
   if (output >= MAX_PWM)
     output = MAX_PWM;
   else if (output <= -MAX_PWM)

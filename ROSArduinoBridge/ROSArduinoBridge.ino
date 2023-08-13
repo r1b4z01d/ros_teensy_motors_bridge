@@ -11,7 +11,7 @@
     Created for the Pi Robot Project: http://www.pirobot.org
     and the Home Brew Robotics Club (HBRC): http://hbrobotics.org
     
-    Authors: Patrick Goebel, James Nugen
+    Authors: Patrick Goebel, James Nugen, Bryan Ribas - R1B4Z01D
 
     Inspired and modeled after the ArbotiX driver by Michael Ferguson
     
@@ -58,12 +58,15 @@
 
    /* The RoboGaia encoder shield */
    //#define ROBOGAIA
+  
+   /* The Cytron SmartDriveDuo PPM Motor Driver */
+   #define SMART_DRIVE_DUO
    
    /* Encoders directly attached to Arduino board */
    #define ARDUINO_ENC_COUNTER
 
    /* L298 Motor driver*/
-   #define L298_MOTOR_DRIVER
+   //#define L298_MOTOR_DRIVER
 #endif
 
 //#define USE_SERVOS  // Enable use of PWM servos as defined in servos.h
@@ -73,7 +76,7 @@
 #define BAUDRATE     57600
 
 /* Maximum PWM signal */
-#define MAX_PWM        255
+#define MAX_PWM        100
 
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"
@@ -104,7 +107,7 @@
   #include "diff_controller.h"
 
   /* Run the PID loop at 30 times per second */
-  #define PID_RATE           30     // Hz
+  #define PID_RATE           60     // Hz
 
   /* Convert the rate into an interval */
   const int PID_INTERVAL = 1000 / PID_RATE;
